@@ -98,5 +98,4 @@ data:
   # optional
   loading:
     - progress: 0 # 0 to 100%
-      done: false # true when finish loading
 ```
