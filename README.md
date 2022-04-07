@@ -7,11 +7,11 @@ The image below illustrates the simulation flow
 
 ## State
 
-The simulation state is managed by the **Logical Simulator** and upon changes an [update state message](#update-state-message) is sent to the **Physical Simulator**.
+The simulation state is managed by the **Logical Simulator** and upon changes an [state message](#state-message) is sent to the **Physical Simulator**.
 
-### Update State Message
+### State Message
 
-The [update state message](#update-state-message) contains information about the current state of the components used by the **Physical Simulator**. For simplicity, the message (see below) is represented in the YAML format. However, the actual implementation is a JavaScript Object.
+The [state message](#state-message) contains information about the current state of the components used by the **Physical Simulator**. For simplicity, the message (see below) is represented in the YAML format. However, the actual implementation is a JavaScript Object.
 
 ```yaml
 simulation: board # or circuit
@@ -50,7 +50,7 @@ data:
           value: # 0 to 100%
           signal_pin: # 3 or 11
 
-        servo_motor_1: # 0 to 100%
+        servo_motor_1:
           value: # 0 to 100%
           signal_pin: # 3 or 11
 
@@ -65,4 +65,32 @@ data:
           direction: # 0 or 1 (clockwise or counter-clockwise respectively)
           positive_pin: # 4 or 12
           negative_pin: # 4 or 12
+```
+
+## Events
+
+Events are managed by the **Physical Simulator** and upon changes a message in the [state message](#state-message) or [event message](#event-message) format is sent to the **Logical Simulator**.
+
+### Event Message
+
+The [event message](#event-message) contains only information about the components that changed their value or configuration (e.g. pin mapping). For simplicity, the message (see below) is represented in the YAML format. However, the actual implementation is a JavaScript Object.
+
+```yaml
+simulation: board # or circuit
+type: LearnBot v1.2
+data:
+  components:
+    - name: button_1
+      type: builtin
+      value: 0 # 0 or 1
+
+    - name: servor_motor_0
+      type: external
+      signal_pin: 3 # 3 or 11
+
+    - name: ultrasonic
+      type: external
+      value: 38 # 0 to 100%
+      trigger_pin: 7 # 7 or 8
+      echo_pin: 8 # 7 or 8
 ```
