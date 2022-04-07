@@ -79,6 +79,7 @@ The [event message](#event-message) contains only information about the componen
 simulation: board # or circuit
 type: LearnBot v1.2
 data:
+  # optional
   components:
     - name: button_1
       type: builtin
@@ -93,4 +94,9 @@ data:
       value: 38 # 0 to 100%
       trigger_pin: 7 # 7 or 8
       echo_pin: 8 # 7 or 8
+
+  # optional
+  loading:
+    - progress: 0 # 0 to 100%
+      done: false # true when finish loading
 ```
