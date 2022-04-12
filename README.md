@@ -106,6 +106,8 @@ The application may be in a failure state that is represented by one of the foll
 | 704  | Invalid access     |
 | 705  | Access expired     |
 
+If there is no error, the simulation error code is 0.
+
 ## Events
 
 Events are managed by the [Physical Simulator](#physical-simulator) and upon changes a message in the [state message](#state-message) or [event message](#event-message) format is sent to the [Logical Simulator](#logical-simulator).
