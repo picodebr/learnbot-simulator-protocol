@@ -26,6 +26,7 @@ simulation:
   type: LearnBot v1.2
   status: running # running, paused or stopped
   loading: 0.951 # (95.1%) 0 to 1
+  error: 0 # see error codes
 
 data:
   components:
@@ -92,6 +93,19 @@ For input and output fields, the initial value is 0. For component pins the init
 
 The simulation starts at the **stopped** state with the loading progress set to 0.
 
+### Error codes
+
+The application may be in a failure state that is represented by one of the following codes:
+
+| Code | Description        |
+| ---- | ------------------ |
+| 700  | Server maintenance |
+| 701  | Missing filename   |
+| 702  | Access denied      |
+| 703  | No available slots |
+| 704  | Invalid access     |
+| 705  | Access expired     |
+
 ## Events
 
 Events are managed by the [Physical Simulator](#physical-simulator) and upon changes a message in the [state message](#state-message) or [event message](#event-message) format is sent to the [Logical Simulator](#logical-simulator).
@@ -106,6 +120,7 @@ simulation:
   type: LearnBot v1.2
   status: running # running, paused or stopped
   loading: 0.951 # (95.1%) 0 to 1
+  error: 0 # see error codes
 
 # optional
 data:
