@@ -66,18 +66,24 @@ data:
           positive_pin: 12 # 4 or 12
           negative_pin: 4 # 4 or 12
 
-  loading:
-    - progress: 0.951 # (95.1%) 0 to 1
-
   simulation:
-    - status: running # running, paused or stopped
+    status: running # running, paused or stopped
+    loading: 0.951 # (95.1%) 0 to 1
 ```
 
-The **simulation status** could be one of the following:
+### Simulation status
 
-- `running` - The simulation is happening
-- `paused` - Freezes the simulation
-- `stopped` - Restart the simulation state and wait until the status change
+The [simulation status](#simulation-status) could be one of the following:
+
+- `running` - The simulation is being executed
+- `paused` - Freezes the simulation but keeps its values
+- `stopped` - Restart the simulation to the initial values and waits until it's running again
+
+### Initial Values
+
+For input and output fields, the initial value is 0. For component pins the initial value is -1 (disconnected).
+
+The simulation starts at the **stopped** state with the loading progress set to 0.
 
 ## Events
 
@@ -108,10 +114,7 @@ data:
       echo_pin: 8 # 7 or 8
 
   # optional
-  loading:
-    - progress: 0.951 # (95.1%) 0 to 1
-
-  # optional
   simulation:
-    - status: running # running, paused or stopped
+    status: running # running, paused or stopped
+    loading: 0.951 # (95.1%) 0 to 1
 ```
