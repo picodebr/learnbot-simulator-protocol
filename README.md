@@ -23,13 +23,13 @@ data:
         temperature: 0.253 # 0 to 1
         ldr: 0.485 # 0 to 1
         button_0: 0 # 0 or 1 (B0)
-        button_1: 0 # 0 or 1 (B1)
-        button_2: 0 # 0 or 1 (B2)
+        button_1: 1 # 0 or 1 (B1)
+        button_2: 1 # 0 or 1 (B2)
         button_3: 0 # 0 or 1 (B3)
-        button_4: 0 # 0 or 1 (BT2)
+        button_4: 1 # 0 or 1 (BT2)
 
       outputs:
-        buzzer: 0.000 # 0 to 1
+        buzzer: 0.000 # 0 to 1 (0 to 20KHz)
         led_0: 0.521 # 0 to 1  (pin 9)
         led_1: 0.200 # 0 to 1 (pin 10)
         led_2: 0.076 # 0 to 1 (pin 11)
@@ -65,7 +65,19 @@ data:
           direction: 1 # 0 or 1 (clockwise or counter-clockwise respectively)
           positive_pin: 12 # 4 or 12
           negative_pin: 4 # 4 or 12
+
+  loading:
+    - progress: 0.951 # (95.1%) 0 to 1
+
+  simulation:
+    - status: running # running, paused or stopped
 ```
+
+The **simulation status** could be one of the following:
+
+- `running` - The simulation is happening
+- `paused` - Freezes the simulation
+- `stopped` - Restart the simulation state and wait until the status change
 
 ## Events
 
@@ -103,9 +115,3 @@ data:
   simulation:
     - status: running # running, paused or stopped
 ```
-
-The **simulation status** could be one of the following:
-
-- `running` - The simulation is happening
-- `paused` - Freezes the simulation
-- `stopped` - Restart the simulation state and wait until the status change
