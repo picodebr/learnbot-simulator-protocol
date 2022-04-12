@@ -22,8 +22,11 @@ The simulation state is managed by the [Logical Simulator](#logical-simulator) a
 The [state message](#state-message) contains information about the current simulation state. For simplicity, the message (see below) is represented in the YAML format. However, the actual implementation is a JavaScript Object.
 
 ```yaml
-simulation: board # or circuit
-type: LearnBot v1.2
+simulation:
+  type: LearnBot v1.2
+  status: running # running, paused or stopped
+  loading: 0.951 # (95.1%) 0 to 1
+
 data:
   components:
     builtin:
@@ -73,10 +76,6 @@ data:
           direction: 1 # 0 or 1 (clockwise or counter-clockwise respectively)
           positive_pin: 12 # 4 or 12
           negative_pin: 4 # 4 or 12
-
-  simulation:
-    status: running # running, paused or stopped
-    loading: 0.951 # (95.1%) 0 to 1
 ```
 
 ### Simulation status
@@ -102,10 +101,14 @@ Events are managed by the [Physical Simulator](#physical-simulator) and upon cha
 The [event message](#event-message) contains information about simulation state properties that has been changed. For simplicity, the message (see below) is represented in the YAML format. However, the actual implementation is a JavaScript Object.
 
 ```yaml
-simulation: board # or circuit
-type: LearnBot v1.2
+# optional
+simulation:
+  type: LearnBot v1.2
+  status: running # running, paused or stopped
+  loading: 0.951 # (95.1%) 0 to 1
+
+# optional
 data:
-  # optional
   components:
     - name: button_1
       type: builtin
@@ -120,9 +123,4 @@ data:
       value: 0.474 # 0 to 1
       trigger_pin: 7 # 7 or 8
       echo_pin: 8 # 7 or 8
-
-  # optional
-  simulation:
-    status: running # running, paused or stopped
-    loading: 0.951 # (95.1%) 0 to 1
 ```
