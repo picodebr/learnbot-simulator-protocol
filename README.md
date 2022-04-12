@@ -15,7 +15,7 @@ The [Physical Simulator](#physical-simulator) simulates the physical LearnBot bo
 
 ## State
 
-The simulation state is managed by the **Logical Simulator** and upon changes an [state message](#state-message) is sent to the **Physical Simulator**.
+The simulation state is managed by the [Logical Simulator](#logical-simulator) and upon changes an [state message](#state-message) is sent to the [Physical Simulator](#physical-simulator).
 
 ### State Message
 
@@ -95,7 +95,7 @@ The simulation starts at the **stopped** state with the loading progress set to 
 
 ## Events
 
-Events are managed by the **Physical Simulator** and upon changes a message in the [state message](#state-message) or [event message](#event-message) format is sent to the **Logical Simulator**.
+Events are managed by the [Physical Simulator](#physical-simulator) and upon changes a message in the [state message](#state-message) or [event message](#event-message) format is sent to the [Logical Simulator](#logical-simulator).
 
 ### Event Message
 
