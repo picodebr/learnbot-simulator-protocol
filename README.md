@@ -129,9 +129,9 @@ data:
   components:
     - name: button_1
       type: builtin
-      value: 0 # 0 or 1
+      value: 1 # 0 or 1
 
-    - name: servor_motor_0
+    - name: servo_motor_0
       type: external
       signal_pin: 3 # 3 or 11
 
