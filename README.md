@@ -99,12 +99,15 @@ The application may be in a failure state that is represented by one of the foll
 
 | Code | Description        |
 | ---- | ------------------ |
-| 700  | Server maintenance |
-| 701  | Missing filename   |
-| 702  | Access denied      |
-| 703  | No available slots |
-| 704  | Invalid access     |
-| 705  | Access expired     |
+| 800  | Server maintenance |
+| 801  | Invalid URL        |
+| 802  | Invalid user       |
+| 803  | Blocked account    |
+| 804  | Access not found   |
+| 805  | Expired access     |
+| 806  | Limit reached      |
+| 807  | Access denied      |
+| 808  | Invalid access     |
 
 If there is no error, the simulation error code is 0.
 
