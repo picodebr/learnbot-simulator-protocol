@@ -24,7 +24,7 @@ The [state message](#state-message) contains information about the current simul
 ```yaml
 simulation:
   type: LearnBot v1.2
-  status: running # running, paused or stopped
+  status: running # running or stopped
   loading: 0.951 # (95.1%) 0 to 1
   error: 0 # see error codes
 
@@ -84,7 +84,6 @@ data:
 The [simulation status](#simulation-status) could be one of the following:
 
 - `running` - The simulation is being executed
-- `paused` - Freezes the simulation but keeps its values
 - `stopped` - Restart the simulation to the initial values and waits until it's running again
 
 ### Initial Values
@@ -123,7 +122,7 @@ The [event message](#event-message) contains information about simulation state 
 # optional
 simulation:
   type: LearnBot v1.2
-  status: running # running, paused or stopped
+  status: running # running or stopped
   loading: 0.951 # (95.1%) 0 to 1
   error: 0 # see error codes
 
