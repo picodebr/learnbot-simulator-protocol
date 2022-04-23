@@ -62,7 +62,7 @@ data:
         servo_motor_0:
           value: 0 # 0 to 1
           signal_pin: -1 # 3 or 11
-          position: null # x and y position
+          position: null # not in place
 
         servo_motor_1:
           value: 0.212 # 0 to 1
