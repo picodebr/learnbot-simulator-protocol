@@ -56,27 +56,32 @@ data:
           value: 0.474 # 0 to 1
           trigger_pin: 7 # 7 or 8
           echo_pin: 8 # 7 or 8
+          position: [632, 495] # x and y position
 
       outputs:
         servo_motor_0:
-          value: 0.998 # 0 to 1
-          signal_pin: 3 # 3 or 11
+          value: 0 # 0 to 1
+          signal_pin: -1 # 3 or 11
+          position: null # x and y position
 
         servo_motor_1:
           value: 0.212 # 0 to 1
           signal_pin: 11 # 3 or 11
+          position: [128, 227] # x and y position
 
         dc_motor_0: # MA
           speed: 0.671 # 0 to 1 (pin 5)
           direction: 0 # 0 or 1 (clockwise or counter-clockwise)
           positive_pin: 9 # 9 or 10
           negative_pin: 10 # 9 or 10
+          position: [-1295, 780] # x and y position
 
         dc_motor_1: # MB
           speed: 1.000 # 0 to 1 (pin 6)
           direction: 1 # 0 or 1 (clockwise or counter-clockwise respectively)
           positive_pin: 12 # 4 or 12
           negative_pin: 4 # 4 or 12
+          position: [522, -879] # x and y position
 ```
 
 ### Simulation status
@@ -86,9 +91,27 @@ The [simulation status](#simulation-status) could be one of the following:
 - `running` - The simulation is being executed
 - `stopped` - Restart the simulation to the initial values and waits until it's running again
 
+### External component position
+
+The external component has an additional property called **position** which holds information about its tridimensional location.
+
+When the component is in place, the position format is the following:
+
+```yaml
+position: [x_coordinate, y_coordinate]
+```
+
+If there the component is **not** in place, the position value is **null**:
+
+```yaml
+position: null
+```
+
+Given the fact that the component doesn't moves in the **z axis**, just two values in the position array are enough.
+
 ### Initial Values
 
-For input and output fields, the initial value is 0. For component pins the initial value is -1 (disconnected).
+For input and output fields, the initial value is 0. For component pins the initial value is -1 (disconnected). And for the external component position, the inital value is null wich means _"not in place"_.
 
 The simulation starts at the **stopped** state with the loading progress set to 0.
 
@@ -136,10 +159,12 @@ data:
     - name: servo_motor_0
       type: external
       signal_pin: 3 # 3 or 11
+      position: [-435, 88]
 
     - name: ultrasonic
       type: external
       value: 0.474 # 0 to 1
       trigger_pin: 7 # 7 or 8
       echo_pin: 8 # 7 or 8
+      position: [2409, 397]
 ```
