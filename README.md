@@ -28,7 +28,9 @@ simulation:
   loading: 0.951 # (95.1%) 0 to 1
   error: 0 # see error codes
 
-data:
+board:
+  position: [0, 0] # x and y position
+
   components:
     builtin:
       inputs:
@@ -91,17 +93,17 @@ The [simulation status](#simulation-status) could be one of the following:
 - `running` - The simulation is being executed
 - `stopped` - Restart the simulation to the initial values and waits until it's running again
 
-### External component position
+### Component position
 
-The external component has an additional property called **position** which holds information about its tridimensional location.
+The board and the external components have an additional property called **position** which holds information about their tridimensional coordinates.
 
-When the component is in place, the position format is the following:
+For the board and for those components that are in place, the position format is as follows:
 
 ```yaml
 position: [x_coordinate, y_coordinate]
 ```
 
-If there the component is **not** in place, the position value is **null**:
+And for those components that are **not** in place, the position value is **null**:
 
 ```yaml
 position: null
@@ -150,7 +152,9 @@ simulation:
   error: 0 # see error codes
 
 # optional
-data:
+board:
+  position: [35, -128] # x and y position
+
   components:
     - name: button_1
       type: builtin
