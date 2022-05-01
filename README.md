@@ -162,6 +162,10 @@ board:
       type: builtin
       value: 1 # 0 or 1
 
+    - name: switch_servo_motor
+      type: builtin
+      value: 0 # 0 or 1
+
     - name: servo_motor_0
       type: external
       signal_pin: 3 # 3 or 11
