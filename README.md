@@ -41,6 +41,8 @@ board:
         button_2: 1 # 0 or 1 (B2)
         button_3: 0 # 0 or 1 (B3)
         button_4: 1 # 0 or 1 (BT2)
+        switch_led_rgb: 0 # 0 or 1
+        switch_servo_motor: 1 # 0 or 1
 
       outputs:
         buzzer: 0.000 # 0 to 1 (0 to 20KHz)
