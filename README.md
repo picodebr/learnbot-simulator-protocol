@@ -103,6 +103,8 @@ The [simulation mode](#simulation-mode) could be one of the following:
 - `3D` - Components positions are considered
 - `AR` - Components positions are ignored
 
+Note that in `3D` mode, components whose position is null have their values set default (i.e. `<value_name>: 0`).
+
 ### Component position
 
 The board and the external components have an additional property called **position** which holds information about their tridimensional coordinates.
@@ -123,9 +125,9 @@ Given the fact that the component doesn't moves in the **z axis**, just two valu
 
 ### Initial Values
 
-For input and output fields, the initial value is 0. For component pins the initial value is -1 (disconnected). And for the external component position, the inital value is null wich means _"not in place"_.
+For input and output fields, the initial value is 0. For component pins the initial value is -1 (disconnected). And for the external component position, the inital value is null wich means _"not in place"_ when running in **3D** mode.
 
-The simulation starts at the **stopped** state with the loading progress set to 0.
+The simulation starts at the **stopped** state with the loading progress set to 0 and mode set to **3D**.
 
 ### Error codes
 
