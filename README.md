@@ -27,6 +27,7 @@ simulation:
   status: running # running or stopped
   loading: 0.951 # (95.1%) 0 to 1
   error: 0 # see error codes
+  mode: 3D # 3D or AR
 
 board:
   position: [0, 0] # x and y position
@@ -95,6 +96,13 @@ The [simulation status](#simulation-status) could be one of the following:
 - `running` - The simulation is being executed
 - `stopped` - Restart the simulation to the initial values and waits until it's running again
 
+### Simulation mode
+
+The [simulation mode](#simulation-mode) could be one of the following:
+
+- `3D` - Components positions are considered
+- `AR` - Components positions are ignored
+
 ### Component position
 
 The board and the external components have an additional property called **position** which holds information about their tridimensional coordinates.
@@ -152,6 +160,7 @@ simulation:
   status: running # running or stopped
   loading: 0.951 # (95.1%) 0 to 1
   error: 0 # see error codes
+  mode: AR
 
 # optional
 board:
