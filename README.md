@@ -103,7 +103,7 @@ The [simulation mode](#simulation-mode) could be one of the following:
 - `3D` - Components positions are considered
 - `AR` - Components positions are ignored
 
-Note that in `3D` mode, components whose position is null have their values set default (i.e. `<value_name>: 0`).
+Note that in `3D` mode, components whose position is null have their values set to default (i.e. `<value_name>: 0`).
 
 ### Component position
 
@@ -122,6 +122,8 @@ position: null
 ```
 
 Given the fact that the component doesn't moves in the **z axis**, just two values in the position array are enough.
+
+Note that positions are ignored when the simulation is running in `3D` mode.
 
 ### Initial Values
 
