@@ -123,7 +123,7 @@ position: null
 
 Given the fact that the component doesn't moves in the **z axis**, just two values in the position array are enough.
 
-Note that positions are ignored when the simulation is running in `3D` mode.
+Note that positions are ignored when the simulation is running in `AR` mode.
 
 ### Initial Values
 
